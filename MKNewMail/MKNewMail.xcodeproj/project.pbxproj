@@ -13,9 +13,15 @@
 		FB6AA2781E9F2CC8009A7BAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6AA2761E9F2CC8009A7BAC /* Main.storyboard */; };
 		FB6AA27A1E9F2CC8009A7BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB6AA2791E9F2CC8009A7BAC /* Assets.xcassets */; };
 		FB6AA27D1E9F2CC8009A7BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6AA27B1E9F2CC8009A7BAC /* LaunchScreen.storyboard */; };
+		FB6AA2891E9F676F009A7BAC /* NewMailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6AA2871E9F676F009A7BAC /* NewMailTableViewCell.m */; };
+		FB6AA28A1E9F676F009A7BAC /* NewMailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6AA2881E9F676F009A7BAC /* NewMailTableViewCell.xib */; };
+		FFD3388DB61F3880F2FF0500 /* Pods_MKNewMail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 707ABED798CE4430E6FAD6D2 /* Pods_MKNewMail.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F748E0E139C5B893CC679D1 /* Pods-MKNewMail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKNewMail.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MKNewMail/Pods-MKNewMail.debug.xcconfig"; sourceTree = "<group>"; };
+		346501E26825C3C18EC4BE7E /* Pods-MKNewMail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKNewMail.release.xcconfig"; path = "Pods/Target Support Files/Pods-MKNewMail/Pods-MKNewMail.release.xcconfig"; sourceTree = "<group>"; };
+		707ABED798CE4430E6FAD6D2 /* Pods_MKNewMail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MKNewMail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6AA26A1E9F2CC7009A7BAC /* MKNewMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKNewMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6AA26E1E9F2CC7009A7BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB6AA2701E9F2CC7009A7BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +32,9 @@
 		FB6AA2791E9F2CC8009A7BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB6AA27C1E9F2CC8009A7BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB6AA27E1E9F2CC8009A7BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB6AA2861E9F676F009A7BAC /* NewMailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMailTableViewCell.h; sourceTree = "<group>"; };
+		FB6AA2871E9F676F009A7BAC /* NewMailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMailTableViewCell.m; sourceTree = "<group>"; };
+		FB6AA2881E9F676F009A7BAC /* NewMailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewMailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +42,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD3388DB61F3880F2FF0500 /* Pods_MKNewMail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EC4037DC96C205180CDCF7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F748E0E139C5B893CC679D1 /* Pods-MKNewMail.debug.xcconfig */,
+				346501E26825C3C18EC4BE7E /* Pods-MKNewMail.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5720A7F5112986DAC3B29E3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				707ABED798CE4430E6FAD6D2 /* Pods_MKNewMail.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FB6AA2611E9F2CC7009A7BAC = {
 			isa = PBXGroup;
 			children = (
 				FB6AA26C1E9F2CC7009A7BAC /* MKNewMail */,
 				FB6AA26B1E9F2CC7009A7BAC /* Products */,
+				0EC4037DC96C205180CDCF7A /* Pods */,
+				5720A7F5112986DAC3B29E3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +91,9 @@
 				FB6AA2711E9F2CC8009A7BAC /* AppDelegate.m */,
 				FB6AA2731E9F2CC8009A7BAC /* ViewController.h */,
 				FB6AA2741E9F2CC8009A7BAC /* ViewController.m */,
+				FB6AA2861E9F676F009A7BAC /* NewMailTableViewCell.h */,
+				FB6AA2871E9F676F009A7BAC /* NewMailTableViewCell.m */,
+				FB6AA2881E9F676F009A7BAC /* NewMailTableViewCell.xib */,
 				FB6AA2761E9F2CC8009A7BAC /* Main.storyboard */,
 				FB6AA2791E9F2CC8009A7BAC /* Assets.xcassets */,
 				FB6AA27B1E9F2CC8009A7BAC /* LaunchScreen.storyboard */,
@@ -86,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB6AA2811E9F2CC8009A7BAC /* Build configuration list for PBXNativeTarget "MKNewMail" */;
 			buildPhases = (
+				6C43AE9F94066FEEF30B33F6 /* [CP] Check Pods Manifest.lock */,
 				FB6AA2661E9F2CC7009A7BAC /* Sources */,
 				FB6AA2671E9F2CC7009A7BAC /* Frameworks */,
 				FB6AA2681E9F2CC7009A7BAC /* Resources */,
+				9A0566367798A8D9330EC84D /* [CP] Embed Pods Frameworks */,
+				5C8F3F687F8BFA155B6B1AF4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,10 +176,59 @@
 				FB6AA27D1E9F2CC8009A7BAC /* LaunchScreen.storyboard in Resources */,
 				FB6AA27A1E9F2CC8009A7BAC /* Assets.xcassets in Resources */,
 				FB6AA2781E9F2CC8009A7BAC /* Main.storyboard in Resources */,
+				FB6AA28A1E9F676F009A7BAC /* NewMailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C8F3F687F8BFA155B6B1AF4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MKNewMail/Pods-MKNewMail-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C43AE9F94066FEEF30B33F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9A0566367798A8D9330EC84D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MKNewMail/Pods-MKNewMail-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FB6AA2661E9F2CC7009A7BAC /* Sources */ = {
@@ -152,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6AA2751E9F2CC8009A7BAC /* ViewController.m in Sources */,
+				FB6AA2891E9F676F009A7BAC /* NewMailTableViewCell.m in Sources */,
 				FB6AA2721E9F2CC8009A7BAC /* AppDelegate.m in Sources */,
 				FB6AA26F1E9F2CC7009A7BAC /* main.m in Sources */,
 			);
@@ -271,6 +356,7 @@
 		};
 		FB6AA2821E9F2CC8009A7BAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F748E0E139C5B893CC679D1 /* Pods-MKNewMail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DM7XAFH5UF;
@@ -283,6 +369,7 @@
 		};
 		FB6AA2831E9F2CC8009A7BAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 346501E26825C3C18EC4BE7E /* Pods-MKNewMail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DM7XAFH5UF;
@@ -312,6 +399,7 @@
 				FB6AA2831E9F2CC8009A7BAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
