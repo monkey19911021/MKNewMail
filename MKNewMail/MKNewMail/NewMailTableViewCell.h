@@ -19,15 +19,25 @@ typedef NS_ENUM(NSInteger, NewMailCellType) {
     NewMailCellTypeSubject = 7,
 };
 
+@class NewMailInfo;
 @interface NewMailTableViewCell : UITableViewCell
+
+@property(nonatomic, strong) NewMailInfo *mailInfo;
+
+@property (copy, nonatomic) void(^addSubBlock)(NewMailCellType mailCellType);
+
+@property (copy, nonatomic) void(^deleteCellBlock)(NSUInteger infoHash);
+
+@end
+
+@interface NewMailInfo : NSObject
+
+-(instancetype)initWithName:(NSString *)name
+                    content:(NSString *)content
+            newMailCellType:(NewMailCellType)newMailCellType;
 
 @property(nonatomic, copy) NSString *name;
 @property(nonatomic, copy) NSString *content;
 @property(nonatomic, assign) NewMailCellType newMailCellType;
-@property(nonatomic, copy) NSIndexPath *indexPath;
-
-@property (copy, nonatomic) void(^addSubBlock)(NewMailCellType mailCellType);
-
-@property (copy, nonatomic) void(^deleteCellBlock)(NSIndexPath *indexPath, NewMailCellType mailCellType);
 
 @end

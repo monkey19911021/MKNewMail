@@ -23,32 +23,26 @@
     [super awakeFromNib];
 }
 
--(void)setName:(NSString *)name {
-    _name = name;
-    nameTextField.text = _name;
-}
-
--(void)setContent:(NSString *)content {
-    _content = content;
-    contentTextField.text = _content;
-}
-
--(void)setNewMailCellType:(NewMailCellType)newMailCellType {
-    _newMailCellType = newMailCellType;
-    titleBtn.hidden = (_newMailCellType == NewMailCellTypeTo || _newMailCellType == NewMailCellTypeCc || _newMailCellType == NewMailCellTypeBcc);
+-(void)setMailInfo:(NewMailInfo *)mailInfo {
+    _mailInfo = mailInfo;
+    nameTextField.text = mailInfo.name;
+    contentTextField.text = mailInfo.content;
+    titleBtn.hidden = (mailInfo.newMailCellType == NewMailCellTypeTo || mailInfo.newMailCellType == NewMailCellTypeCc || mailInfo.newMailCellType == NewMailCellTypeBcc);
     
-    titleLayoutConstraint.constant = _newMailCellType == NewMailCellTypeSubject? 56: 90;
+    titleLayoutConstraint.constant = mailInfo.newMailCellType == NewMailCellTypeSubject? 56: 90;
     
-    nameLayoutConstraint.constant = _newMailCellType == NewMailCellTypeSubject? 0: 73;
+    nameLayoutConstraint.constant = mailInfo.newMailCellType == NewMailCellTypeSubject? 0: 73;
     
-    deleteLayoutConstraint.constant = _newMailCellType == NewMailCellTypeSubject? 0: 44;
+    deleteLayoutConstraint.constant = mailInfo.newMailCellType == NewMailCellTypeSubject? 0: 44;
     
-    [titleBtn setImage: _newMailCellType == NewMailCellTypeSubject || _newMailCellType == NewMailCellTypeFrom? nil: [UIImage imageNamed:@"add"] forState: UIControlStateNormal];
+    [titleBtn setImage: mailInfo.newMailCellType == NewMailCellTypeSubject || mailInfo.newMailCellType == NewMailCellTypeFrom? nil: [UIImage imageNamed:@"add"] forState: UIControlStateNormal];
     
-    contentTextField.placeholder = _newMailCellType == NewMailCellTypeSubject? @"主题": @"邮箱地址";
+    contentTextField.placeholder = mailInfo.newMailCellType == NewMailCellTypeSubject? @"主题": @"邮箱地址";
+    
+    deleteBtn.hidden = mailInfo.newMailCellType == NewMailCellTypeFrom;
     
     NSString *title = @"";
-    switch (_newMailCellType) {
+    switch (mailInfo.newMailCellType) {
         case NewMailCellTypeFrom:
             title = @"发送人:";
             break;
@@ -73,13 +67,16 @@
 
 -(IBAction)addSub:(id)sender {
     if(_addSubBlock){
-        _addSubBlock(_newMailCellType);
+        _addSubBlock(_mailInfo.newMailCellType);
     }
 }
 
 -(IBAction)deleteSub:(id)sender {
+    nameTextField.text = @"";
+    contentTextField.text = @"";
+    
     if(_deleteCellBlock){
-        _deleteCellBlock(_indexPath, _newMailCellType);
+        _deleteCellBlock(_mailInfo.hash);
     }
 }
 
@@ -88,6 +85,21 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+@end
+
+@implementation NewMailInfo
+
+-(instancetype)initWithName:(NSString *)name
+                    content:(NSString *)content
+            newMailCellType:(NewMailCellType)newMailCellType {
+    if(self = [super init]){
+        _name = name;
+        _content = content;
+        _newMailCellType = newMailCellType;
+    }
+    return self;
 }
 
 @end

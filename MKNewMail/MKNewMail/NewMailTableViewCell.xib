@@ -88,7 +88,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="add" width="30" height="30"/>
-        <image name="delete" width="30" height="30"/>
+        <image name="add" width="25" height="25"/>
+        <image name="delete" width="25" height="25"/>
     </resources>
 </document>
