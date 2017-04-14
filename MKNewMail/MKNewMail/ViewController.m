@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "NewMailTableViewCell.h"
+#import <mailcore2-ios/MailCore/MailCore.h>
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -78,6 +79,15 @@
     };
     
     [newMailtableView registerNib:[UINib nibWithNibName: @"NewMailTableViewCell" bundle: nil] forCellReuseIdentifier:@"newMailCell"];
+}
+
+//发送邮件
+- (IBAction)sendMail:(id)sender {
+    for(NewMailInfo *info in headInfoArray){
+        if(info.content.length > 0){
+            NSLog(@"%@", info.content);
+        }
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

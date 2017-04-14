@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sLT-7U-5NI"/>
+                        <segue destination="icA-nO-lgI" kind="relationship" relationship="rootViewController" id="xxs-4U-PJo"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcD-pf-Fpn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -54,14 +54,39 @@
                             <constraint firstAttribute="trailing" secondItem="zWD-ai-gN6" secondAttribute="trailing" id="l1R-qA-r37"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EfZ-we-AQC"/>
+                    <navigationItem key="navigationItem" id="EfZ-we-AQC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="mlZ-hT-GZg">
+                            <connections>
+                                <action selector="sendMail:" destination="BYZ-38-t0r" id="78x-It-eQE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="newMailtableView" destination="zWD-ai-gN6" id="DJx-4m-OHc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="122.78860569715144"/>
+            <point key="canvasLocation" x="241" y="123"/>
+        </scene>
+        <!--Text Editor View Controller-->
+        <scene sceneID="BQ6-zD-DVY">
+            <objects>
+                <viewController id="icA-nO-lgI" customClass="TextEditorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CH9-C1-0LP"/>
+                        <viewControllerLayoutGuide type="bottom" id="vsl-Nj-XAX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vqX-cf-CZS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AzL-1N-TWa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5MJ-SL-CJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="309"/>
         </scene>
     </scenes>
 </document>

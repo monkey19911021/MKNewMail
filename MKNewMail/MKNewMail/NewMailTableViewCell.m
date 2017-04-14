@@ -8,6 +8,10 @@
 
 #import "NewMailTableViewCell.h"
 
+@interface NewMailTableViewCell ()<UITextFieldDelegate>
+
+@end
+
 @implementation NewMailTableViewCell
 {
      __weak IBOutlet UIButton *titleBtn;
@@ -21,6 +25,9 @@
 }
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    nameTextField.delegate = self;
+    contentTextField.delegate = self;
 }
 
 -(void)setMailInfo:(NewMailInfo *)mailInfo {
@@ -80,6 +87,23 @@
     }
 }
 
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSMutableString *str = textField.text.mutableCopy;
+    if(range.length == 0){
+        [str insertString:string atIndex: range.location];
+    }else{
+        [str deleteCharactersInRange: range];
+    }
+    
+    if([textField isEqual: nameTextField]){
+        _mailInfo.name = str;
+    }
+    
+    if([textField isEqual: contentTextField]){
+        _mailInfo.content = str;
+    }
+    return YES;
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
