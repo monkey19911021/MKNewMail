@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, NewMailCellType) {
-    NewMailCellTypeFrom = 0,
-    NewMailCellTypeMainTo = 1,
+    NewMailCellTypeFrom = 0,    //发送人
+    NewMailCellTypeMainTo = 1,  //接收人
     NewMailCellTypeTo = 2,
-    NewMailCellTypeMainCc = 3,
+    NewMailCellTypeMainCc = 3,  //抄送
     NewMailCellTypeCc = 4,
-    NewMailCellTypeMainBcc = 5,
+    NewMailCellTypeMainBcc = 5, //密送
     NewMailCellTypeBcc = 6,
-    NewMailCellTypeSubject = 7,
+    NewMailCellTypeSubject = 7, //主题
 };
 
 @class NewMailInfo;
@@ -29,6 +29,9 @@ typedef NS_ENUM(NSInteger, NewMailCellType) {
 @property (copy, nonatomic) void(^deleteCellBlock)(NSUInteger infoHash);
 
 @end
+
+
+
 
 @interface NewMailInfo : NSObject
 

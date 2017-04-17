@@ -113,7 +113,18 @@
 
 @end
 
+
+
+
 @implementation NewMailInfo
+
+-(instancetype)init {
+    if(self = [super init]){
+        _name = @"";
+        _content = @"";
+    }
+    return self;
+}
 
 -(instancetype)initWithName:(NSString *)name
                     content:(NSString *)content

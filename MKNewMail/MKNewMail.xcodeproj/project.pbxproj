@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB457F901EA4AB1200CFE68D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB457F921EA4AB1200CFE68D /* Localizable.strings */; };
+		FB457F961EA4B15300CFE68D /* MKIMAPCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = FB457F951EA4B15300CFE68D /* MKIMAPCtrl.m */; };
 		FB6AA26F1E9F2CC7009A7BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6AA26E1E9F2CC7009A7BAC /* main.m */; };
 		FB6AA2721E9F2CC8009A7BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6AA2711E9F2CC8009A7BAC /* AppDelegate.m */; };
 		FB6AA2751E9F2CC8009A7BAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6AA2741E9F2CC8009A7BAC /* ViewController.m */; };
@@ -118,6 +119,8 @@
 		346501E26825C3C18EC4BE7E /* Pods-MKNewMail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKNewMail.release.xcconfig"; path = "Pods/Target Support Files/Pods-MKNewMail/Pods-MKNewMail.release.xcconfig"; sourceTree = "<group>"; };
 		707ABED798CE4430E6FAD6D2 /* Pods_MKNewMail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MKNewMail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB457F911EA4AB1200CFE68D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB457F941EA4B15300CFE68D /* MKIMAPCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKIMAPCtrl.h; sourceTree = "<group>"; };
+		FB457F951EA4B15300CFE68D /* MKIMAPCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKIMAPCtrl.m; sourceTree = "<group>"; };
 		FB6AA26A1E9F2CC7009A7BAC /* MKNewMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKNewMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6AA26E1E9F2CC7009A7BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB6AA2701E9F2CC7009A7BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -292,19 +295,21 @@
 		FB6AA26C1E9F2CC7009A7BAC /* MKNewMail */ = {
 			isa = PBXGroup;
 			children = (
-				FB6AA28E1EA0BA0C009A7BAC /* Source */,
+				FB6AA28E1EA0BA0C009A7BAC /* ZSSRichTextEditor */,
 				FB6AA2701E9F2CC7009A7BAC /* AppDelegate.h */,
 				FB6AA2711E9F2CC8009A7BAC /* AppDelegate.m */,
-				FB457F921EA4AB1200CFE68D /* Localizable.strings */,
 				FB6AA2731E9F2CC8009A7BAC /* ViewController.h */,
 				FB6AA2741E9F2CC8009A7BAC /* ViewController.m */,
 				FB6AA2861E9F676F009A7BAC /* NewMailTableViewCell.h */,
 				FB6AA2871E9F676F009A7BAC /* NewMailTableViewCell.m */,
 				FB6AA2881E9F676F009A7BAC /* NewMailTableViewCell.xib */,
+				FB457F941EA4B15300CFE68D /* MKIMAPCtrl.h */,
+				FB457F951EA4B15300CFE68D /* MKIMAPCtrl.m */,
 				FB6AA2761E9F2CC8009A7BAC /* Main.storyboard */,
 				FB6AA2791E9F2CC8009A7BAC /* Assets.xcassets */,
 				FB6AA27B1E9F2CC8009A7BAC /* LaunchScreen.storyboard */,
 				FB6AA27E1E9F2CC8009A7BAC /* Info.plist */,
+				FB457F921EA4AB1200CFE68D /* Localizable.strings */,
 				FB6AA26D1E9F2CC7009A7BAC /* Supporting Files */,
 			);
 			path = MKNewMail;
@@ -318,7 +323,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FB6AA28E1EA0BA0C009A7BAC /* Source */ = {
+		FB6AA28E1EA0BA0C009A7BAC /* ZSSRichTextEditor */ = {
 			isa = PBXGroup;
 			children = (
 				FB6AA28F1EA0BA0C009A7BAC /* editor.html */,
@@ -336,6 +341,7 @@
 				FB6AA2FC1EA0BA0C009A7BAC /* ZSSTextView.h */,
 				FB6AA2FD1EA0BA0C009A7BAC /* ZSSTextView.m */,
 			);
+			name = ZSSRichTextEditor;
 			path = Source;
 			sourceTree = "<group>";
 		};
@@ -659,6 +665,7 @@
 				FB6AA3541EA0BA0D009A7BAC /* HRColorPickerView.m in Sources */,
 				FB6AA34D1EA0BA0D009A7BAC /* CYRLayoutManager.m in Sources */,
 				FB6AA34E1EA0BA0D009A7BAC /* CYRTextStorage.m in Sources */,
+				FB457F961EA4B15300CFE68D /* MKIMAPCtrl.m in Sources */,
 				FB6AA3521EA0BA0D009A7BAC /* HRCgUtil.m in Sources */,
 				FB6AA2751E9F2CC8009A7BAC /* ViewController.m in Sources */,
 				FB6AA3531EA0BA0D009A7BAC /* HRColorCursor.m in Sources */,
