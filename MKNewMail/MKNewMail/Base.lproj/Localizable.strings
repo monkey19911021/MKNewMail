@@ -1,0 +1,16 @@
+{
+	"Image scale, 0.5 by default" = "\U7f29\U653e\U56fe\U7247\Uff0c\U9ed8\U8ba40.5";
+	"Insert Image From Device" = "\U4ece\U76f8\U518c\U9009\U62e9\U56fe\U7247";
+	"Pick New Image" = "\U9009\U62e9\U65b0\U56fe\U7247";
+	"Pick Image" = "\U9009\U62e9\U56fe\U7247";
+	Cancel = "\U53d6\U6d88";
+	Title = "\U6807\U9898";
+	"URL (required)" = "http://";
+	"Insert Link" = "\U63d2\U5165\U8fde\U63a5";
+	Update = "\U66f4\U65b0";
+	Insert = "\U63d2\U5165";
+	"BG Color" = "\U80cc\U666f\U8272";
+	"Text Color" = "\U6587\U5b57\U989c\U8272";
+	Alt = "\U66ff\U4ee3\U6587\U5b57";
+	"Insert Image" = "\U63d2\U5165\U56fe\U7247\U5730\U5740";
+}

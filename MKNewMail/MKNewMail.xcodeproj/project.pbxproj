@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB457F901EA4AB1200CFE68D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB457F921EA4AB1200CFE68D /* Localizable.strings */; };
 		FB6AA26F1E9F2CC7009A7BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6AA26E1E9F2CC7009A7BAC /* main.m */; };
 		FB6AA2721E9F2CC8009A7BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6AA2711E9F2CC8009A7BAC /* AppDelegate.m */; };
 		FB6AA2751E9F2CC8009A7BAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6AA2741E9F2CC8009A7BAC /* ViewController.m */; };
@@ -116,6 +117,7 @@
 		1F748E0E139C5B893CC679D1 /* Pods-MKNewMail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKNewMail.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MKNewMail/Pods-MKNewMail.debug.xcconfig"; sourceTree = "<group>"; };
 		346501E26825C3C18EC4BE7E /* Pods-MKNewMail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKNewMail.release.xcconfig"; path = "Pods/Target Support Files/Pods-MKNewMail/Pods-MKNewMail.release.xcconfig"; sourceTree = "<group>"; };
 		707ABED798CE4430E6FAD6D2 /* Pods_MKNewMail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MKNewMail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB457F911EA4AB1200CFE68D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FB6AA26A1E9F2CC7009A7BAC /* MKNewMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKNewMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6AA26E1E9F2CC7009A7BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB6AA2701E9F2CC7009A7BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				FB6AA28E1EA0BA0C009A7BAC /* Source */,
 				FB6AA2701E9F2CC7009A7BAC /* AppDelegate.h */,
 				FB6AA2711E9F2CC8009A7BAC /* AppDelegate.m */,
+				FB457F921EA4AB1200CFE68D /* Localizable.strings */,
 				FB6AA2731E9F2CC8009A7BAC /* ViewController.h */,
 				FB6AA2741E9F2CC8009A7BAC /* ViewController.m */,
 				FB6AA2861E9F676F009A7BAC /* NewMailTableViewCell.h */,
@@ -538,6 +541,7 @@
 				FB6AA33E1EA0BA0C009A7BAC /* ZSStable@2x.png in Resources */,
 				FB6AA31C1EA0BA0C009A7BAC /* ZSSimageDevice@2x.png in Resources */,
 				FB6AA3231EA0BA0C009A7BAC /* ZSSkeyboard.png in Resources */,
+				FB457F901EA4AB1200CFE68D /* Localizable.strings in Resources */,
 				FB6AA3071EA0BA0C009A7BAC /* ZSSfonts.png in Resources */,
 				FB6AA3081EA0BA0C009A7BAC /* ZSSfonts@2x.png in Resources */,
 				FB6AA30A1EA0BA0C009A7BAC /* ZSSforcejustify@2x.png in Resources */,
@@ -675,6 +679,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		FB457F921EA4AB1200CFE68D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB457F911EA4AB1200CFE68D /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		FB6AA2761E9F2CC8009A7BAC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
