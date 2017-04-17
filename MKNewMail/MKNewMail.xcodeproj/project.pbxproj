@@ -15,7 +15,6 @@
 		FB6AA27D1E9F2CC8009A7BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6AA27B1E9F2CC8009A7BAC /* LaunchScreen.storyboard */; };
 		FB6AA2891E9F676F009A7BAC /* NewMailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6AA2871E9F676F009A7BAC /* NewMailTableViewCell.m */; };
 		FB6AA28A1E9F676F009A7BAC /* NewMailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6AA2881E9F676F009A7BAC /* NewMailTableViewCell.xib */; };
-		FB6AA28D1EA0B468009A7BAC /* TextEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6AA28C1EA0B468009A7BAC /* TextEditorViewController.m */; };
 		FB6AA2FE1EA0BA0C009A7BAC /* editor.html in Resources */ = {isa = PBXBuildFile; fileRef = FB6AA28F1EA0BA0C009A7BAC /* editor.html */; };
 		FB6AA2FF1EA0BA0C009A7BAC /* ZSSbgcolor.png in Resources */ = {isa = PBXBuildFile; fileRef = FB6AA2911EA0BA0C009A7BAC /* ZSSbgcolor.png */; };
 		FB6AA3001EA0BA0C009A7BAC /* ZSSbgcolor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB6AA2921EA0BA0C009A7BAC /* ZSSbgcolor@2x.png */; };
@@ -130,8 +129,6 @@
 		FB6AA2861E9F676F009A7BAC /* NewMailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMailTableViewCell.h; sourceTree = "<group>"; };
 		FB6AA2871E9F676F009A7BAC /* NewMailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMailTableViewCell.m; sourceTree = "<group>"; };
 		FB6AA2881E9F676F009A7BAC /* NewMailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewMailTableViewCell.xib; sourceTree = "<group>"; };
-		FB6AA28B1EA0B468009A7BAC /* TextEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEditorViewController.h; sourceTree = "<group>"; };
-		FB6AA28C1EA0B468009A7BAC /* TextEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEditorViewController.m; sourceTree = "<group>"; };
 		FB6AA28F1EA0BA0C009A7BAC /* editor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = editor.html; sourceTree = "<group>"; };
 		FB6AA2911EA0BA0C009A7BAC /* ZSSbgcolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZSSbgcolor.png; sourceTree = "<group>"; };
 		FB6AA2921EA0BA0C009A7BAC /* ZSSbgcolor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZSSbgcolor@2x.png"; sourceTree = "<group>"; };
@@ -298,8 +295,6 @@
 				FB6AA2711E9F2CC8009A7BAC /* AppDelegate.m */,
 				FB6AA2731E9F2CC8009A7BAC /* ViewController.h */,
 				FB6AA2741E9F2CC8009A7BAC /* ViewController.m */,
-				FB6AA28B1EA0B468009A7BAC /* TextEditorViewController.h */,
-				FB6AA28C1EA0B468009A7BAC /* TextEditorViewController.m */,
 				FB6AA2861E9F676F009A7BAC /* NewMailTableViewCell.h */,
 				FB6AA2871E9F676F009A7BAC /* NewMailTableViewCell.m */,
 				FB6AA2881E9F676F009A7BAC /* NewMailTableViewCell.xib */,
@@ -666,7 +661,6 @@
 				FB6AA2891E9F676F009A7BAC /* NewMailTableViewCell.m in Sources */,
 				FB6AA35A1EA0BA0D009A7BAC /* ZSSRichTextEditor.m in Sources */,
 				FB6AA3561EA0BA0D009A7BAC /* HRColorUtil.m in Sources */,
-				FB6AA28D1EA0B468009A7BAC /* TextEditorViewController.m in Sources */,
 				FB6AA2721E9F2CC8009A7BAC /* AppDelegate.m in Sources */,
 				FB6AA3551EA0BA0D009A7BAC /* HRColorPickerViewController.m in Sources */,
 				FB6AA3501EA0BA0D009A7BAC /* CYRToken.m in Sources */,

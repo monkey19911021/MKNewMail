@@ -23,19 +23,40 @@
     void(^addSubBlock)(NewMailCellType mailCellType);
     void(^deleteCellBlock)(NSUInteger infoHash);
 
+    __weak IBOutlet NSLayoutConstraint *tableViewTopContraint; //-667
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    headInfoArray = @[[[NewMailInfo alloc] initWithName: @"n0" content: @"n0@xxx.com" newMailCellType: NewMailCellTypeFrom],
-                      [[NewMailInfo alloc] initWithName: @"n1" content: @"n1@xxx.com" newMailCellType: NewMailCellTypeMainTo],
-                      [[NewMailInfo alloc] initWithName: @"n2" content: @"n2@xxx.com" newMailCellType: NewMailCellTypeTo],
-                      [[NewMailInfo alloc] initWithName: @"n3" content: @"n3@xxx.com" newMailCellType: NewMailCellTypeMainCc],
-                      [[NewMailInfo alloc] initWithName: @"n4" content: @"n4@xxx.com" newMailCellType: NewMailCellTypeCc],
-                      [[NewMailInfo alloc] initWithName: @"n5" content: @"n5@xxx.com" newMailCellType: NewMailCellTypeMainBcc],
-                      [[NewMailInfo alloc] initWithName: @"n6" content: @"n6@xxx.com" newMailCellType: NewMailCellTypeBcc],
-                      [[NewMailInfo alloc] initWithName: @"" content: @"主题" newMailCellType: NewMailCellTypeSubject]].mutableCopy;
-  
+    [self configureContent];
+    
+    [self configureDataSource];
+    [self configureBlock];
+    
+    [self.view bringSubviewToFront: newMailtableView.superview];
+    [newMailtableView registerNib:[UINib nibWithNibName: @"NewMailTableViewCell" bundle: nil] forCellReuseIdentifier:@"newMailCell"];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    //延时处理
+    dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC));
+    dispatch_after(start, dispatch_get_main_queue(), ^{
+        [self showContact: nil];
+    });
+}
+
+-(void)configureDataSource {
+    headInfoArray = @[[[NewMailInfo alloc] initWithName: @"" content: @"" newMailCellType: NewMailCellTypeFrom],
+                      [[NewMailInfo alloc] initWithName: @"" content: @"" newMailCellType: NewMailCellTypeMainTo],
+                      [[NewMailInfo alloc] initWithName: @"" content: @"" newMailCellType: NewMailCellTypeMainCc],
+                      [[NewMailInfo alloc] initWithName: @"" content: @"" newMailCellType: NewMailCellTypeMainBcc],
+                      [[NewMailInfo alloc] initWithName: @"" content: @"" newMailCellType: NewMailCellTypeSubject]].mutableCopy;
+
+}
+
+-(void)configureBlock {
     __weak NSMutableArray *weakHeadInfoArray = headInfoArray;
     __weak UITableView *weakNewMailtableView = newMailtableView;
     
@@ -77,8 +98,35 @@
         [strongHeadInfoArray removeObjectAtIndex: index];
         [strongNewMailtableView deleteRowsAtIndexPaths: @[[NSIndexPath indexPathForRow: index inSection: 0]] withRowAnimation: UITableViewRowAnimationLeft];
     };
+}
+
+-(void)configureContent {
+    //Set Custom CSS
+    NSString *customCSS = @"";
+    [self setCSS:customCSS];
     
-    [newMailtableView registerNib:[UINib nibWithNibName: @"NewMailTableViewCell" bundle: nil] forCellReuseIdentifier:@"newMailCell"];
+    self.alwaysShowToolbar = YES;
+    self.receiveEditorDidChangeEvents = NO;
+    
+    // HTML Content to set in the editor
+    NSString *html = @"<div class='test'></div><!-- This is an HTML comment -->"
+    "<p>This is a test of the <strong>ZSSRichTextEditor</strong> by <a title=\"Zed Said\" href=\"http://www.zedsaid.com\">Zed Said Studio</a></p>";
+    
+    // Set the base URL if you would like to use relative links, such as to images.
+    self.baseURL = [NSURL URLWithString:@"http://www.zedsaid.com"];
+    self.shouldShowKeyboard = NO;
+    // Set the HTML contents of the editor
+    [self setPlaceholder:@"This is a placeholder that will show when there is no content(html)"];
+    
+    [self setHTML:html];
+}
+
+- (IBAction)showContact:(id)sender {
+    [self.view layoutIfNeeded]; //改变量影响到的最终视图做layoutIfNeeded
+    [UIView animateWithDuration:0.3 delay: 0 options: UIViewAnimationOptionCurveEaseInOut animations:^{
+        tableViewTopContraint.constant = tableViewTopContraint.constant == 0? -667: 0;
+        [self.view layoutIfNeeded]; //与上一句形成包围
+    } completion: nil];
 }
 
 //发送邮件
@@ -90,6 +138,7 @@
     }
 }
 
+#pragma mark - UITableViewDelegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return headInfoArray.count;
 }
@@ -103,6 +152,43 @@
     cell.deleteCellBlock = deleteCellBlock;
     
     return cell;
+}
+
+
+#pragma mark - ZSSRichTextEditor
+- (void)showInsertURLAlternatePicker {
+    
+    [self dismissAlertView];
+    
+    
+}
+
+
+- (void)showInsertImageAlternatePicker {
+    
+    [self dismissAlertView];
+    
+    
+}
+
+- (void)editorDidChangeWithText:(NSString *)text andHTML:(NSString *)html {
+    
+    NSLog(@"Text Has Changed: %@", text);
+    
+    NSLog(@"HTML Has Changed: %@", html);
+    
+}
+
+- (void)hashtagRecognizedWithWord:(NSString *)word {
+    
+    NSLog(@"Hashtag has been recognized: %@", word);
+    
+}
+
+- (void)mentionRecognizedWithWord:(NSString *)word {
+    
+    NSLog(@"Mention has been recognized: %@", word);
+    
 }
 
 - (void)didReceiveMemoryWarning {
