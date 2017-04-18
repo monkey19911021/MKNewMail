@@ -134,7 +134,7 @@
     if(!sender){
         return;
     }
-        
+    
     [self.view layoutIfNeeded];
     [UIView animateWithDuration:0.3 delay: 0 options: UIViewAnimationOptionCurveEaseInOut animations:^{
         tableViewTopContraint.constant = tableViewTopContraint.constant == 0? originTableViewTopContraintValue: 0;
