@@ -161,7 +161,7 @@
         NSString *pwd = ctrl.textFields[0].text;
         [SVProgressHUD showWithStatus: @"发送中"];
         [MKIMAPCtrl sendMailWithHeads: headInfoArray senderMailPassword: pwd mailBod: [self getHTML] completeBlock:^(NSError *error) {
-            if(!error){
+            if(error.code == MCOErrorNone){
                 [SVProgressHUD showSuccessWithStatus: @"发送成功"];
             }else{
                 [SVProgressHUD showErrorWithStatus: @"发送失败"];

@@ -77,27 +77,12 @@
             // 发送邮件
             NSData * rfc822Data =[messageBuilder data];
             MCOSMTPSendOperation *sendOperation = [smtpSession sendOperationWithData: rfc822Data];
-            [sendOperation start:^(NSError *error) {
-                if (error == MCOErrorNone) {
-                    //邮件发送成功
-                    if(completeBlock){
-                        completeBlock(nil);
-                    }
-                    
-                } else if(completeBlock){
-                    completeBlock(error);
-                }
-            }];
-            
+            [sendOperation start: completeBlock];
             
         } else if(completeBlock){
             completeBlock(error);
         }
     }];
-    
-    if(completeBlock){
-        completeBlock(nil);
-    }
 }
 
 @end
