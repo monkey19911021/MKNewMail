@@ -8,7 +8,6 @@
 
 #import "MKIMAPCtrl.h"
 #import "NewMailTableViewCell.h"
-#import <mailcore2-ios/MailCore/MailCore.h>
 
 @implementation MKIMAPCtrl
 

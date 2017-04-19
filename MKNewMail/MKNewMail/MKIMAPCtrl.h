@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <mailcore2-ios/MailCore/MailCore.h>
 
 @class NewMailInfo;
 @interface MKIMAPCtrl : NSObject
